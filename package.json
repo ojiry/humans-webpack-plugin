@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ojiry/humans-webpack-plugin#readme",
   "dependencies": {},
   "devDependencies": {
+    "@types/webpack": "^4.4.12",
     "ts-loader": "^5.1.1",
     "typescript": "^3.0.3",
     "webpack": "^4.19.1",
