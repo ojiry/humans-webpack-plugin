@@ -1,6 +1,6 @@
 {
   "name": "humans-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Humans.txt generator for webpack",
   "main": "src/index.js",
   "scripts": {
