@@ -25,6 +25,7 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: [".js", ".ts"],
   },
+  target: "node",
 };
 
 export default config;
