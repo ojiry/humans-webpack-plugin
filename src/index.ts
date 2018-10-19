@@ -1,21 +1,21 @@
-import * as webpack from "webpack";
 import fs from "fs";
 import path from "path";
+import * as webpack from "webpack";
 
 interface Options {
   filename: string;
 }
 
 class HumansWebpackPlugin {
-  options: Options;
+  public options: Options;
 
   constructor(options: Options) {
-    this.options = (<any>Object).assign({
+    this.options = (Object as any).assign({
       filename: "humans.txt",
     }, options);
   }
 
-  apply(compiler: webpack.Compiler) {
+  public apply(compiler: webpack.Compiler) {
     const plugin = "HumansWebpackPlugin";
     compiler.hooks.emit.tapAsync(plugin, (compilation, callback) => {
       const outputPath: string = (compiler.options.output && compiler.options.output.path)
