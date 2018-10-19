@@ -2,7 +2,8 @@
   "name": "humans-webpack-plugin",
   "version": "0.0.2",
   "description": "Humans.txt generator for webpack",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
