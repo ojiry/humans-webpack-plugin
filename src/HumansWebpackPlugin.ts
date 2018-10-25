@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import * as webpack from "webpack";
 
 export interface HumansWebpackPluginOptions {
@@ -18,10 +16,27 @@ export default class HumansWebpackPlugin {
   public apply(compiler: webpack.Compiler) {
     const plugin = "HumansWebpackPlugin";
     compiler.hooks.emit.tapAsync(plugin, (compilation, callback) => {
-      const outputPath: string = (compiler.options.output && compiler.options.output.path)
-        ? compiler.options.output.path
-        : "dist";
-      fs.writeFileSync(path.relative(outputPath, this.options.filename), "text");
+      const text = `
+[TODO: implement generator]
+/* TEAM */
+Your title: Your name.
+Site: email, link to a contact form, etc.
+Twitter: your Twitter username.
+Location: City, Country.
+
+/* THANKS */
+Name: name or url
+
+/* SITE */
+Last update: YYYY/MM/DD
+Standards: HTML5, CSS3,..
+Components: Modernizr, jQuery, etc.
+Software: Software used for the development
+`;
+      compilation.assets[this.options.filename] = {
+        source: () => text,
+        size: () => text.length
+      };
       callback();
     });
   }
